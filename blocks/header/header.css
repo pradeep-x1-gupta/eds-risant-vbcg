@@ -1,6 +1,6 @@
 header {
-  --logo-width: 40px;
-  --logo-height: 40px;
+  --logo-width: auto;
+  --logo-height: 28px;
   --mega-columns: 4;
 
   display: block;
@@ -11,7 +11,8 @@ header {
   z-index: 1000;
   overflow: hidden;
   max-height: var(--header-height);
-  background-color: light-dark(var(--color-light), var(--color-dark));
+  background-color: var(--color-brand-surface);
+  color: var(--color-on-brand);
 
   ul {
     margin: 0;
@@ -158,6 +159,7 @@ header {
     .default-content {
       height: var(--header-height);
       display: flex;
+      align-items: center;
       justify-content: space-between;
 
       p,
@@ -169,15 +171,17 @@ header {
         font-weight: 700;
         text-decoration: none;
         margin: 0;
-        color: var(--color-brand);
+        color: var(--color-on-brand);
 
         img {
+          width: auto;
           height: var(--logo-height);
         }
 
         svg {
           width: var(--logo-width);
           height: var(--logo-height);
+          color: var(--color-on-brand);
         }
       }
     }
