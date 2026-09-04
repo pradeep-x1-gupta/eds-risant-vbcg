@@ -1,0 +1,117 @@
+.ai-search {
+  .a11y-clip {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    clip-path: inset(50%);
+  }
+
+  .search-heading {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-s);
+    font-weight: 600;
+    font-size: var(--body-font-size-l);
+    margin: 0 0 var(--spacing-m);
+  }
+
+  .search-info {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 1px solid currentcolor;
+    background: none;
+    padding: 0;
+    font-size: var(--body-font-size-xs);
+    font-style: italic;
+    color: inherit;
+  }
+
+  .search-tooltip {
+    max-width: 320px;
+    margin: var(--spacing-s) 0 0;
+    padding: var(--spacing-m);
+    border: 1px solid var(--color-gray-200);
+    border-radius: 4px;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-size: var(--body-font-size-s);
+  }
+
+  .search-form {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-m);
+    max-width: 640px;
+  }
+
+  input {
+    flex: 1;
+    min-width: 0;
+    padding: var(--spacing-m);
+    border: 1px solid var(--color-gray-300);
+    border-radius: 999px;
+  }
+
+  .search-submit {
+    flex: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--color-brand);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::after {
+      content: '';
+      width: 0;
+      height: 0;
+      margin-left: 2px;
+      border-block: 6px solid transparent;
+      border-left: 9px solid var(--color-on-brand);
+    }
+  }
+}
+
+.ai-search.launcher {
+  position: fixed;
+  right: var(--spacing-l);
+  bottom: var(--spacing-l);
+  z-index: 900;
+
+  .search-trigger {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-s);
+    padding: var(--spacing-m) var(--spacing-l);
+    border: none;
+    border-radius: 999px;
+    background-color: var(--color-brand);
+    color: var(--color-on-brand);
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 25%);
+  }
+
+  .search-panel {
+    width: min(360px, calc(100vw - 2 * var(--spacing-l)));
+    margin: 0;
+    inset: auto var(--spacing-l) calc(var(--spacing-l) + 56px) auto;
+    border: 1px solid var(--color-gray-200);
+    border-radius: 8px;
+    padding: var(--spacing-l);
+  }
+
+  .search-form {
+    max-width: none;
+  }
+}
