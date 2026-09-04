@@ -45,6 +45,11 @@ describe('getSvg', () => {
     expect(svg.getAttribute('viewBox')).to.equal('0 0 24 24');
   });
 
+  it('gives the logo its own viewBox instead of cropping it to a 24x24 square', () => {
+    const svg = getSvg({ name: 'logo' });
+    expect(svg.getAttribute('viewBox')).to.equal('0 0 56 32');
+  });
+
   it('keeps the span class and points at the fixed fragment', () => {
     const svg = getSvg({ name: 'globe', className: 'icon icon-globe' });
     expect(svg.getAttribute('class')).to.equal('icon icon-globe');
