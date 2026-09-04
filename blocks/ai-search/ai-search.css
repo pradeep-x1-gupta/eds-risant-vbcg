@@ -1,4 +1,7 @@
 .ai-search {
+  max-width: var(--grid-container-width);
+  margin-inline: auto;
+
   .a11y-clip {
     position: absolute;
     width: 1px;
