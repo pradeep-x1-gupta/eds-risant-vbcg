@@ -8,7 +8,12 @@ const VIEW_BOX = '0 0 24 24';
 const ID = 'icon';
 const PATH = '/img/icons';
 
-export function getSvg({ name, id = ID, className = '', viewBox = VIEW_BOX, path = PATH }) {
+// logo.svg is a 248x32 lockup, not a square glyph — a 24x24 default viewBox crops it via <use>.
+const ICON_VIEW_BOX = { logo: '0 0 56 32' };
+
+export function getSvg({
+  name, id = ID, className = '', viewBox = ICON_VIEW_BOX[name] ?? VIEW_BOX, path = PATH,
+}) {
   const str = `<svg xmlns="http://www.w3.org/2000/svg" class="${className}" viewBox="${viewBox}" aria-hidden="true">
     <use href="${codeBase}${path}/${name}.svg#${id}"></use>
   </svg>`;
