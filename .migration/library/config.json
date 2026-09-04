@@ -1,0 +1,12 @@
+{
+  "library": {
+    "data": [
+      {
+        "title": "Blocks",
+        "path": "/docs/library/blocks",
+        "type": "blocks",
+        "format": "block"
+      }
+    ]
+  }
+}
